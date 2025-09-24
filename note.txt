@@ -1,0 +1,1 @@
+http://127.0.0.1:8000/api/v1/travels/ut-neque-tempore/tours?priceFrom=100&priceTo=6102&dateFrom=2025-09-22&dateTo=2025-09-25&sortBy=price&sortOrder=ascs
