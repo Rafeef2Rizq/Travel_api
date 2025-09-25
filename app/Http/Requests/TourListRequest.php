@@ -28,15 +28,15 @@ class TourListRequest extends FormRequest
             'dateFrom' => 'date',
             'dateTo' => 'date',
             'sortBy' => Rule::in(['price']),
-            'sortOrder' => Rule::in(['asc', 'desc'])
-
+            'sortOrder' => Rule::in(['asc', 'desc']),
         ];
     }
+
     public function message()
     {
         return [
-            'sortBy' => "The 'sortBy' parameter accept only 'price' value",
-            'sortOrder' => "The 'sortOrder' parameter accept only 'asc', 'desc' value",
+            'sortBy' => "The 'sortBy' parameter accepts only 'price' value",
+            'sortOrder' => "The 'sortOrder' parameter accepts only 'asc', 'desc' value",
         ];
     }
 }

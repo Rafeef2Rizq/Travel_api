@@ -1,0 +1,33 @@
+<?php
+
+namespace Tests\Feature;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class LoginTest extends TestCase
+{
+    use RefreshDatabase;
+    public function test_login_return_token_with_valid_credentails(): void
+    {
+        $user = User::factory()->create();
+        $response = $this->postJson('/api/v1/login', [
+            'email' => $user->email,
+            'password' => 'password'
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['access_token']);
+    }
+    public function  test_login_return_error_with_invalid_credentails()
+    {
+        $user = User::factory()->create();
+        $response = $this->postJson('/api/v1/login', [
+            'email' => 'rami12@gmail.com',
+            'password' => 'password'
+        ]);
+        $response->assertStatus(422);
+    }
+}

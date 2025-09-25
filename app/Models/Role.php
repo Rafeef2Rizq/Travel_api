@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    protected $fillable = ["name"];
-    
-    public function roles(){
+    use HasUuids;
+
+    protected $fillable = ['id', 'name'];
+
+    public function roles()
+    {
         return $this->belongsToMany(Role::class);
     }
 }

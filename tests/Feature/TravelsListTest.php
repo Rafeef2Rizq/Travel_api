@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Travel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+
 use Tests\TestCase;
 
 class TravelsListTest extends TestCase

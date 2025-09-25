@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-   use HasUuids;
+    use HasUuids;
+
     /**
      * Run the migrations.
      */
